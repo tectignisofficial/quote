@@ -60,7 +60,7 @@
 
           <li class="nav-item">
             <a href="setting.php" class="nav-link <?= $page == 'setting.php' ? 'active':'' ?>">
-            <i class="nav-icon fas fa-th"></i>
+            <i class="nav-icon fas fa-gear"></i>
               <p>
               Setting
               </p>
@@ -78,7 +78,7 @@
 
           <li class="nav-item">
             <a href="email.php" class="nav-link <?= $page == 'email.php' ? 'active':'' ?>">
-            <i class="nav-icon fas fa-th"></i>
+            <i class="nav-icon fas fa-envelope"></i>
               <p>
                 Email Configuration
               </p>

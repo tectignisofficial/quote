@@ -55,7 +55,7 @@ include("_includes/config.php");
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title" style="padding-top:10px;">List Of Customer</h3>
-                <button type="button" style="float:right" name="submit" class="btn btn-primary mr-2"> <a href="customer.php">Add New Customer</a></button>
+                <a href="customer.php"><button type="button" style="float:right" name="submit" class="btn btn-primary mr-2"> Add New Customer</button></a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -93,7 +93,8 @@ include("_includes/config.php");
                     </button>
 
                     <button type="button" class="delete-row btn-sm btn-success">
-                    <i class="fas fa-phone"></i>
+                    <i class="fas fa-whatsapp"></i>
+                  
                     </button>
 
                     <button type="button" class="delete-row btn-sm btn-secondary">

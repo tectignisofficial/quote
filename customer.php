@@ -6,12 +6,12 @@ include("_includes/config.php");
 if(isset($_POST['submit'])){
     $customer=$_POST['customer'];
     $company_name=$_POST['company_name'];
-    $person_name=$_POST['person_name'];
+    // $person_name=$_POST['person_name'];
     $contact_no=$_POST['contact_no'];
     $whatsapp_no=$_POST['whatsapp_no'];
     $email_id=$_POST['email_id'];
 
-    $sql=mysqli_query($conn,"INSERT INTO `customer1`(`customer`, `company_name`, `person_name`, `contact_no`, `email_id`, `whatsapp_no`) VALUES ('$customer','$company_name','$person_name','$contact_no','$email_id','$whatsapp_no')");
+    $sql=mysqli_query($conn,"INSERT INTO `customer1`(`customer`, `company_name`, `contact_no`, `email_id`, `whatsapp_no`) VALUES ('$customer','$company_name','$contact_no','$email_id','$whatsapp_no')");
 
     if($sql==1){
         echo "Saved!", "data successfully submitted", "success";
@@ -105,9 +105,9 @@ if(isset($_POST['submit'])){
               </div>
               <!-- /.col -->
               <div class="col-md-6">
-                <div class="form-group">
-                  <label>Person Name</label>
-                  <input type="text" class="form-control" name="person_name" placeholder="Enter person Name">
+              <div class="form-group">
+                  <label>Company Name</label>
+                  <input type="text" class="form-control" name="company_name" placeholder="Enter company Name">
                 </div>
                 <!-- /.form-group -->
                 <div class="form-group">
