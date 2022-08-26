@@ -23,7 +23,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="customer.php" class="nav-link <?= $page == 'customer.php' ? 'active':'' ?>">
+            <a href="cus_table.php" class="nav-link <?= $page == 'cus_table.php' ? 'active':'' ?>">
                <i class="nav-icon fas fa-user-friends"></i>
               <p>
                 Customer
@@ -42,7 +42,7 @@
 
           <li class="nav-item">
             <a href="sales.php" class="nav-link <?= $page == 'sales.php' ? 'active':'' ?>">
-            <i class="nav-icon fas fa-th"></i>
+            <i class="nav-icon fas fa-messages-dollar"></i>
               <p>
                 Sales
               </p>
@@ -51,7 +51,7 @@
 
           <li class="nav-item">
             <a href="report.php" class="nav-link <?= $page == 'report.php' ? 'active':'' ?>">
-            <i class="nav-icon fas fa-th"></i>
+            <i class="nav-icon fas fa-file-check"></i>
               <p>
                 Report
               </p>
@@ -69,7 +69,7 @@
 
           <li class="nav-item">
             <a href="terms.php" class="nav-link <?= $page == 'terms.php' ? 'active':'' ?>">
-            <i class="nav-icon fas fa-th"></i>
+            <i class="nav-icon fas fa-rectangle-code"></i>
               <p>
                 Terms And Condition
               </p>

@@ -98,8 +98,8 @@ if(isset($_POST['submit'])){
                 </div>
                 <!-- /.form-group -->
                 <div class="form-group">
-                  <label>Company Name</label>
-                  <input type="text" class="form-control" name="company_name" placeholder="Enter company Name">
+                  <label>Contact No</label>
+                  <input type="tel" class="form-control" name="contact_no" placeholder="Enter contact Number">
                 </div>
                 <!-- /.form-group -->
               </div>
@@ -111,8 +111,8 @@ if(isset($_POST['submit'])){
                 </div>
                 <!-- /.form-group -->
                 <div class="form-group">
-                  <label>Contact No</label>
-                  <input type="tel" class="form-control" name="contact_no" placeholder="Enter contact Number">
+                  <label>Email ID</label>
+                  <input type="email" class="form-control" name="email_id" placeholder="Enter email">
                 </div>
                 <!-- /.form-group -->
               </div>
@@ -122,20 +122,14 @@ if(isset($_POST['submit'])){
 
             <div class="row">
               <div class="col-12 col-sm-6">
-                <div class="form-group">
-                  <label>Email ID</label>
-                  <input type="email" class="form-control" name="email_id" placeholder="Enter email">
-                </div>
-                <!-- /.form-group -->
-              </div>
-              <!-- /.col -->
-              <div class="col-12 col-sm-6">
-                <div class="form-group">
+              <div class="form-group">
                   <label>Whatsapp No</label>
                   <input type="tel" class="form-control" name="whatsapp_no" placeholder="Enter whatsapp number">
                 </div>
                 <!-- /.form-group -->
               </div>
+              <!-- /.col -->
+              
               <button type="submit" name="submit" class="btn btn-primary" style="margin-left:90%;">Submit</button>
 </form>
               <!-- /.col -->
