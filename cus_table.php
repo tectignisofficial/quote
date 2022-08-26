@@ -34,7 +34,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">DataTables</li>
+              <li class="breadcrumb-item active">Customer</li>
             </ol>
           </div>
         </div>
@@ -50,7 +50,8 @@
 
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable with default features</h3>
+                <h3 class="card-title" style="padding-top:10px;">List Of Customer</h3>
+                <button type="button" style="float:right" name="submit" class="btn btn-primary mr-2">Add New Customer</button>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -63,18 +64,40 @@
                     <th>Contact No</th>
                     <th>Whatsapp No</th>
                     <th>Email</th>
+                    <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
                   <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                      Explorer 4.0
-                    </td>
-                    <td>Win 95+</td>
-                    <td> 4</td>
-                    <td>X</td>
-                    <td>X</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                   <td>
+                    <button type="button" class="delete-row btn-sm btn-info">
+                    <i class="fas fa-eye"></i>
+                    </button>
+
+                    <button type="button" class="delete-row btn-sm btn-warning">
+                    <i class="fas fa-file"></i>
+                    </button>
+
+                    <button type="button" class="delete-row btn-sm btn-success">
+                    <i class="fas fa-phone"></i>
+                    </button>
+
+                    <button type="button" class="delete-row btn-sm btn-secondary">
+                    <i class="fas fa-envelope"></i>
+                    </button>
+
+                    <button type="button" class="delete-row btn-sm btn-primary">
+                    <i class="fas fa-arrow-up-from-square"></i>
+                  
+                    
+                    </button>
+                  </td>
                   </tr>
                  
                   </tbody>
