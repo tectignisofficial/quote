@@ -1,3 +1,7 @@
+<?php
+include("_includes/config.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,7 +55,7 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title" style="padding-top:10px;">List Of Customer</h3>
-                <button type="button" style="float:right" name="submit" class="btn btn-primary mr-2">Add New Customer</button>
+                <button type="button" style="float:right" name="submit" class="btn btn-primary mr-2"> <a href="customer.php">Add New Customer</a></button>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -68,13 +72,17 @@
                   </tr>
                   </thead>
                   <tbody>
+                  <?php
+        $sql=mysqli_query($conn,"select * from customer1");
+           while ($row=mysqli_fetch_assoc($sql)){ 
+           ?>
                   <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><?php echo $row['id'] ?></td>
+                    <td><?php echo $row['customer'] ?></td>
+                    <td><?php echo $row['company_name'] ?></td>
+                    <td><?php echo $row['contact_no'] ?></td>
+                    <td><?php echo $row['whatsapp_no'] ?></td>
+                    <td><?php echo $row['email_id'] ?></td>
                    <td>
                     <button type="button" class="delete-row btn-sm btn-info">
                     <i class="fas fa-eye"></i>
@@ -93,12 +101,12 @@
                     </button>
 
                     <button type="button" class="delete-row btn-sm btn-primary">
-                    <i class="fas fa-arrow-up-from-square"></i>
-                  
-                    
+                    <i class="fas fa-arrow-rotate-right"></i>
+             
                     </button>
                   </td>
                   </tr>
+                  <?php } ?>
                  
                   </tbody>
                  
