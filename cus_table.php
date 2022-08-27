@@ -107,7 +107,7 @@ if(isset($_GET['gen'])){
                   
                     </button>
 
-                    <button type="button" class="delete-row btn-sm btn-secondary">
+                    <button type="button" id="usereditid" class="delete-row btn-sm btn-secondary">
                     <i class="fas fa-envelope"></i>
                     </button>
 
@@ -130,11 +130,39 @@ if(isset($_GET['gen'])){
           <!-- /.col -->
         </div>
         <!-- /.row -->
+
       </div>
       <!-- /.container-fluid -->
+
+
+
+      
     </section>
     <!-- /.content -->
+
+
+    <div class="modal fade closemaual" id="dnkModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+      </div>
+      <form method="post">
+      <div class="modal-body body1">
+      </div>
+    <div class="modal-footer">
+    <button type="button" class="btn-close btn btn-secondary" data-dismiss="modal">Close</button>
+      <button type="submit" class="btn btn-primary" name="manualAttendanceEdit">Save changes</button>
+    </div>
+  </form>
   </div>
+  </div>
+</div>
+  </div>
+
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
@@ -190,5 +218,29 @@ if(isset($_GET['gen'])){
     });
   });
 </script>
+
+
+
+<script>
+          $(document).ready(function(){
+          $('#usereditid').click(function(){
+            let dnkk = $(this).data('id');
+            $('#dnkModal').modal('show'); 
+
+            $.ajax({
+            url: 'table1.php',
+            type: 'post',
+            data: {dnkk: dnkk},
+            success: function(response1){ 
+              $('.body1').html(response1);
+              $('#dnkModal').modal('show'); 
+            }
+          });
+          });
+
+
+          });
+          </script>
+
 </body>
 </html>

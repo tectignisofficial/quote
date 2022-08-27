@@ -14,7 +14,7 @@ if(isset($_POST['submit'])){
     $sql=mysqli_query($conn,"INSERT INTO `customer1`(`customer`, `company_name`, `contact_no`, `email_id`, `whatsapp_no`) VALUES ('$customer','$company_name','$contact_no','$email_id','$whatsapp_no')");
 
     if($sql==1){
-        echo "Saved!", "data successfully submitted", "success";
+        '<script>alert("Saved!", "data successfully submitted", "success");</script>';
         header("location:cus_table.php");
     }else {
         echo '<script>alert("oops...somthing went wrong");</script>';
