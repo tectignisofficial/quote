@@ -94,7 +94,7 @@ if(isset($_GET['gen'])){
                     <td><?php echo $row['whatsapp_no'] ?></td>
                     <td><?php echo $row['email_id'] ?></td>
                    <td>
-                    <button type="button" class="delete-row btn-sm btn-info">
+                    <button type="button" id="view" data-id="<?php echo $row['id'] ?>"class="delete-row btn-sm btn-info">
                     <i class="fas fa-eye"></i>
                     </button>
 
@@ -161,7 +161,31 @@ if(isset($_GET['gen'])){
   </div>
   </div>
 </div>
+
+
+<div class="modal fade closemaual" id="dnkModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Moda title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+      </div>
+      <form method="post">
+      <div class="modal-body jhg">
+      </div>
+    <div class="modal-footer">
+    <button type="button" class="btn-close btn btn-danger" data-dismiss="modal">Close</button>
+
+    </div>
+  </form>
   </div>
+  </div>
+</div>
+
+  </div>
+
 
   <!-- /.content-wrapper -->
   <footer class="main-footer">
@@ -242,5 +266,23 @@ if(isset($_GET['gen'])){
           });
           </script>
 
+<script>
+
+          $(document).ready(function(){
+          $('#view').click(function(){
+            let dnk = $(this).data('id');
+            // $('#dnkModal1').modal('show'); 
+            $.ajax({
+            url: 'table1.php',
+            type: 'post',
+            data: {dnk: dnk},
+            success: function(response2){ 
+              $('.jhg').html(response2);
+              $('#dnkModal1').modal('show'); 
+            }
+          });
+          });
+          });
+          </script>
 </body>
 </html>
