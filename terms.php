@@ -4,18 +4,13 @@ include("_includes/config.php");
 
 <?php
 if(isset($_POST['submit'])){
-    $customer=$_POST['customer'];
-    $company_name=$_POST['company_name'];
-    // $person_name=$_POST['person_name'];
-    $contact_no=$_POST['contact_no'];
-    $whatsapp_no=$_POST['whatsapp_no'];
-    $email_id=$_POST['email_id'];
-
-    $sql=mysqli_query($conn,"INSERT INTO `customer1`(`customer`, `company_name`, `contact_no`, `email_id`, `whatsapp_no`) VALUES ('$customer','$company_name','$contact_no','$email_id','$whatsapp_no')");
+    $terms=$_POST['terms'];
+    
+    $sql=mysqli_query($conn,"INSERT INTO `terms_condition`(`terms`) VALUES ('$terms')");
 
     if($sql==1){
         echo "Saved!", "data successfully submitted", "success";
-        header("location:cus_table.php");
+        header("location:terms.php");
     }else {
         echo '<script>alert("oops...somthing went wrong");</script>';
     }
@@ -26,7 +21,7 @@ if(isset($_POST['submit'])){
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> CRM | CUSTOMER </title>
+  <title> CRM | Terms And Conditions </title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -65,12 +60,12 @@ if(isset($_POST['submit'])){
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Customer Form</h1>
+            <h1>Terms And Condition</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Customer Form</li>
+              <li class="breadcrumb-item active">Terms And Condition Form</li>
             </ol>
           </div>
         </div>
@@ -83,7 +78,7 @@ if(isset($_POST['submit'])){
         <!-- SELECT2 EXAMPLE -->
         <div class="card card-default">
           <div class="card-header">
-            <h3 class="card-title">Customer Details</h3>
+            <h3 class="card-title">Terms And Condition Details</h3>
 
           
           </div>
@@ -91,56 +86,17 @@ if(isset($_POST['submit'])){
           <form method="post">
           <div class="card-body">
             <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Customer</label>
-                  <input type="text" class="form-control" name="customer" placeholder="Enter Customer Name">
-                </div>
-                <!-- /.form-group -->
-                <div class="form-group">
-                  <label>Contact No</label>
-                  <input type="tel" class="form-control" name="contact_no" placeholder="Enter contact Number">
-                </div>
-                <!-- /.form-group -->
-              </div>
-              <!-- /.col -->
-              <div class="col-md-6">
-              <div class="form-group">
-                  <label>Company Name</label>
-                  <input type="text" class="form-control" name="company_name" placeholder="Enter company Name">
-                </div>
-                <!-- /.form-group -->
-                <div class="form-group">
-                  <label>Email ID</label>
-                  <input type="email" class="form-control" name="email_id" placeholder="Enter email">
-                </div>
-                <!-- /.form-group -->
-              </div>
-              <!-- /.col -->
-            </div>
-            <!-- /.row -->
-
-            <div class="row">
-              <div class="col-12 col-sm-6">
-              <div class="form-group">
-                  <label>Whatsapp No</label>
-                  <input type="tel" class="form-control" name="whatsapp_no" placeholder="Enter whatsapp number">
-                </div>
-                <!-- /.form-group -->
-              </div>
-              <!-- /.col -->
-             
-
+            <div class="card-body col-md-12">
+    <label>Terms And Conditions</label>
+    <textarea class="form-control" name="terms"></textarea>
+    </div>
+</div>
               <button type="submit" name="submit" class="btn btn-primary" style="margin-left:90%;">Submit</button>
 </form>
               <!-- /.col -->
             </div>
             <!-- /.row -->
-          </div>
-          <!-- /.card-body -->
-         
-        </div>
-        <!-- /.card -->
+  
 
       </div>
       <!-- /.container-fluid -->

@@ -2,22 +2,12 @@
 include("_includes/config.php");
 ?>
 
-<?php
-if(isset($_GET['gen'])){
-      $id=mysqli_real_escape_string($conn,$_GET['gen']);
-      $sql=mysqli_query($conn,"update customer1 set `status`='1'");
-      if($sql==1){
-       header("location:sales.php");
-      }
-    }
-
-    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Customer Table</title>
+  <title>sales Table</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -48,7 +38,7 @@ if(isset($_GET['gen'])){
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Customer</li>
+              <li class="breadcrumb-item active">Sales</li>
             </ol>
           </div>
         </div>
@@ -64,8 +54,8 @@ if(isset($_GET['gen'])){
 
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title" style="padding-top:10px;">List Of Customer</h3>
-                <a href="customer.php"><button type="button" style="float:right" name="submit" class="btn btn-primary mr-2"> Add New Customer</button></a>
+                <h3 class="card-title" style="padding-top:10px;">List Of Sales</h3>
+                <!-- <a href="customer.php"><button type="button" style="float:right" name="submit" class="btn btn-primary mr-2"> Add New Customer</button></a> -->
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -78,12 +68,12 @@ if(isset($_GET['gen'])){
                     <th>Contact No</th>
                     <th>Whatsapp No</th>
                     <th>Email</th>
-                    <th>Action</th>
+                    
                   </tr>
                   </thead>
                   <tbody>
                   <?php
-        $sql=mysqli_query($conn,"select * from customer1 where status=0");
+        $sql=mysqli_query($conn,"select * from customer1 where status=1");
            while ($row=mysqli_fetch_assoc($sql)){ 
            ?>
                   <tr>
@@ -93,29 +83,7 @@ if(isset($_GET['gen'])){
                     <td><?php echo $row['contact_no'] ?></td>
                     <td><?php echo $row['whatsapp_no'] ?></td>
                     <td><?php echo $row['email_id'] ?></td>
-                   <td>
-                    <button type="button" class="delete-row btn-sm btn-info">
-                    <i class="fas fa-eye"></i>
-                    </button>
-
-                    <button type="button" class="delete-row btn-sm btn-warning">
-                    <i class="fas fa-file"></i>
-                    </button>
-
-                    <button type="button" class="delete-row btn-sm btn-success">
-                    <i class="fas fa-whatsapp"></i>
                   
-                    </button>
-
-                    <button type="button" class="delete-row btn-sm btn-secondary">
-                    <i class="fas fa-envelope"></i>
-                    </button>
-
-                    <a href="cus_table.php?gen=<?php echo $row['id'];?>">
-                    <button class="btn btn-warning" name="submit">Sales</button>
-             
-                    </button>
-                  </td>
                   </tr>
                   <?php } ?>
                  
